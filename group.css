@@ -1,0 +1,136 @@
+#heading {
+  font-family: Poppins, sans-serif;
+  font-size: 72px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 70px;
+  letter-spacing: 0.10000000149011612px;
+  text-align: center;
+  color: #000000;
+  margin: 30px;
+}
+
+#mock{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+  flex-grow: 1;
+}
+
+.account-details {
+  width: 50%;
+  height: 100%;
+  text-align: left;
+  margin: 10px;
+}
+
+.design {
+  display: flex;
+  background-image:  url(design.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 50%;
+  height: 900px;
+}
+
+#eyecatcher {
+  font-family: Montserrat;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 36px;
+  letter-spacing: 0.10000000149011612px;
+  text-align: left;
+  color: #356D65;
+}
+
+#details {
+  font-family: Montserrat;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 57px;
+  letter-spacing: 0.20000000298023224px;
+  text-align: left;
+  color: #252B42;
+}
+
+#explaination {
+  font-family: Montserrat;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 38px;
+  letter-spacing: 0.20000000298023224px;
+  text-align: left;
+  color: #737373;
+}
+#album-view {
+  position: relative;
+  transform: translate(100px, 350px);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  -ms-flex-item-align: center;
+  width: 325px;
+  height: 400px;
+  overflow: scroll;
+  margin: 0;
+  }
+  
+#album-view img{
+  margin: 8px;
+  padding: 8px;
+  height: 200px;
+  width: 120px;
+  object-fit: cover;
+}
+
+#album-view img:hover{
+  -webkit-filter: blur(3px);
+}
+
+#menu_bar{
+  display: flex;
+  flex-wrap: no-wrap;
+  justify-content: space-around;
+  flex-grow: 1;
+}
+button{
+  background-color: white;
+  color: #ff6f69;
+  text-align: center;
+  border: none;  
+  font-family: Montserrat;
+  border-radius: 30px;
+}
+button:hover{
+  background-color: #ff6f69; 
+  color: white;
+}
+
+button:focus{
+  background-color: #ff6f69;
+  color: white;
+}
+
+#main-pic {
+  background-image: url(images/main.jpg);
+  height: auto;
+  margin: 10px;
+  width: 87%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#text {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  color: #000000;
+  font-size:medium;
+  text-align: center;
+  background-color: greenyellow;
+  margin: 10px;
+}
+

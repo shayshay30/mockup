@@ -1,0 +1,160 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="group.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <title>Beta Version Coming Soon</title>
+  </head>
+  
+  <body>
+    <h1 id="heading">Beta Version</h1>
+    <h1 id="heading">Coming Soon</h1>
+    <hr>
+    <div id="mock">
+      <div class="design">
+        <div id="album-view">
+          <div id='menu_bar'>
+            <button type="button" id="home-button">Home</button>
+            <button type="button" id="food-button">Foods</button>
+            <button type="button" id="drinks-button">Drinks</button>
+            <button type="button" id="desserts-button">Desserts</button>
+          </div>
+          
+          <div id="main-pic">
+            <div id="text">
+              <p>Happiness is just a click away!</p>
+            </div>
+          </div>
+          
+          <div id="menu-pictures"></div>
+          <script>
+            
+            var foodImages = ['<img src="images/food/Coconut-Chicken-Curry-2.jpg" id="food1" onclick="foodexpandFunction(this, 0);">',
+            '<img src="images/food/Fresh-California-Avocado-and-Turkey-Sandwich-1.jpeg" onclick="foodexpandFunction(this, 1);">',
+            '<img src="images/food/healthy-fried-rice-elizabeth-rider-recipe.jpg" onclick="foodexpandFunction(this, 2);">',
+            '<img src="images/food/IMG_9836.jpg" onclick="foodexpandFunction(this, 3);">',
+            '<img src="images/food/IMG_20577-close.jpg" onclick="foodexpandFunction(this, 4);">',
+            '<img src="images/food/protein-oatmeal-1-725x1088.jpg" onclick="foodexpandFunction(this, 5);">'];
+
+            var drinkImages = ['<img src="images/drinks/blueberry.jpg" onclick="drinkexpandFunction(this, 0);">',
+            '<img src="images/drinks/chocolatedrink.jpg" onclick="drinkexpandFunction(this, 1);">',
+            '<img src="images/drinks/juice.jpg" onclick="drinkexpandFunction(this, 2);">',
+            '<img src="images/drinks/lemonade.jpg" onclick="drinkexpandFunction(this, 3);">',
+            '<img src="images/drinks/matcha.jpg" onclick="drinkexpandFunction(this, 4);">',
+            '<img src="images/drinks/smoothie.jpg" onclick="drinkexpandFunction(this, 5);">'];
+
+            var dessertImages = ['<img src="images/desserts/IMG_20210110_183812_Bokeh.jpg" onclick="dessertexpandFunction(this, 0);">',
+            '<img src="images/desserts/pexels-jill-wellington-3553702.jpg" onclick="dessertexpandFunction(this, 1);">',
+            '<img src="images/desserts/pexels-quang-nguyen-vinh-2144112.jpg" onclick="dessertexpandFunction(this, 2);">',
+            '<img src="images/desserts/pexels-solodsha-7664095.jpg" onclick="dessertexpandFunction(this, 3);">',
+            '<img src="images/desserts/summer-desserts-1584132523.jpg" onclick="dessertexpandFunction(this, 4);">',
+            '<img src="images/desserts/Unknown.jpg" onclick="dessertexpandFunction(this, 5);">'];
+            
+            
+            const fb = document.getElementById("food-button");
+            fb.addEventListener("click", () => {
+              document.getElementById("menu-pictures").innerHTML= '';
+              for (var i = 0; i < 6; i++) {
+                  document.getElementById("menu-pictures").innerHTML += foodImages[i];
+              }
+            });
+
+            function expandFood(pos) {
+              document.getElementById("menu-pictures").innerHTML= '';
+              if (pos % 2 == 0) {
+                pos += 1;
+              }
+              for (var i = 0; i < 6; i++) {
+                document.getElementById("menu-pictures").innerHTML += foodImages[i];
+                if (i == pos) {
+                  document.getElementById("menu-pictures").innerHTML+= '<div class="container">'+
+                  '<img id="expandedImage" style = "width: 87%; height: auto; margin: 5px; padding: 5px;"></div>';
+                }
+              }
+            }
+            const drb = document.getElementById("drinks-button");
+            drb.addEventListener("click", () => {
+            	document.getElementById("menu-pictures").innerHTML= '';
+              for (var i = 0; i < 6; i++) {
+                document.getElementById("menu-pictures").innerHTML += drinkImages[i];
+              }
+            });
+            
+            function expandDrink(pos) {
+              document.getElementById("menu-pictures").innerHTML= '';
+              if (pos % 2 == 0) {
+                pos += 1;
+              }
+              for (var i = 0; i < 6; i++) {
+                document.getElementById("menu-pictures").innerHTML += drinkImages[i];
+                if (i == pos) {
+                  document.getElementById("menu-pictures").innerHTML+= '<div class="container">'+
+                  '<img id="expandedImage" style = "width: 87%; height: auto;"></div>';
+                }
+              }
+            }
+
+            const desb = document.getElementById("desserts-button");
+            desb.addEventListener("click", () => {
+            	document.getElementById("menu-pictures").innerHTML= '';
+              for (var i = 0; i < 6; i++) {
+                document.getElementById("menu-pictures").innerHTML += dessertImages[i];
+              }
+            });
+
+            function expandDessert(pos) {
+              document.getElementById("menu-pictures").innerHTML= '';
+              if (pos % 2 == 0) {
+                pos += 1;
+              }
+              for (var i = 0; i < 6; i++) {
+                document.getElementById("menu-pictures").innerHTML += dessertImages[i];
+                if (i == pos) {
+                  document.getElementById("menu-pictures").innerHTML+= '<div class="container">'+
+                  '<img id="expandedImage" style = "width: 87%; height: auto;"></div>';
+                }
+              }
+            }
+
+                       
+            function foodexpandFunction(imgs, num) {
+              expandFood(num);
+              var expandImage= document.getElementById("expandedImage");
+              expandImage.src= imgs.src;
+              expandImg.parentElement.style.display = "block";
+            }
+            
+
+            function drinkexpandFunction(imgs, num) {
+              expandDrink(num);
+              var expandImage= document.getElementById("expandedImage");
+              expandImage.src= imgs.src;
+              expandImg.parentElement.style.display = "block";
+            }
+
+            function dessertexpandFunction(imgs, num) {
+              expandDessert(num);
+              var expandImage= document.getElementById("expandedImage");
+              expandImage.src= imgs.src;
+              expandImg.parentElement.style.display = "block";
+            }
+
+          </script>
+        
+         </div>
+        <div class="hidden" id="modal-view"></div>
+      </div>
+      
+      <div class="account-details">
+        <p id= "eyecatcher">Create an account</p>
+        <p id="details">Sign up/Login to get started</p>
+        <p id="explaination">An account is created simply with your email address and a desired password! </p>
+        </div>
+    </div>
+
+    <p id="eyecatcher">Explore varieties</p>
+    <p id="details">Enjoy your favourite hot meal for free!</p>
+    <p id="explaination">Shop for your favourite meals or drinks and enjoy while doing it. </p>
+    </body>
+</html>
